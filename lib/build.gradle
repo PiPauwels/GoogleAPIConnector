@@ -1,0 +1,29 @@
+plugins 
+{
+    // Apply the java-library plugin for API and implementation separation.
+    id 'java-library'
+}
+
+repositories 
+{
+    // Use JCenter for resolving dependencies.
+    jcenter()
+}
+
+version = '1.0.0'
+
+dependencies
+{
+    // Use JUnit test framework.
+    testImplementation 'junit:junit:4.13'
+
+    // This dependency is exported to consumers, that is to say found on their compile classpath.
+    api 'org.apache.commons:commons-math3:3.6.1'
+
+    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
+    implementation 'com.google.guava:guava:29.0-jre'
+    compile 'com.google.api-client:google-api-client:1.32.1'
+    compile 'com.google.api-client:google-api-client-jackson2:1.28.1'
+    compile 'com.google.auth:google-auth-library-oauth2-http:1.0.0'
+    compile 'com.google.oauth-client:google-oauth-client-jetty:1.30.6'
+}
