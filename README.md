@@ -17,6 +17,13 @@ specific API you want to use (e.g. Google Spreadsheets).
 
 This library will presume you have a keyfile present in `<USER HOME>\.googleauth\<PROJECT FOLDER>\`
 
+### Dependencies
+This library depends on four other libraries:
+* com.google.api-client:google-api-client:1.32.1
+* com.google.api-client:google-api-client-jackson2:1.28.1
+* com.google.auth:google-auth-library-oauth2-http:1.0.0
+* com.google.oauth-client:google-oauth-client-jetty:1.30.6
+
 ### Usage
 Let's say we have a service account and downloaded the keyfile from [https://console.cloud.google.com/apis/credentials](https://console.cloud.google.com/apis/credentials) 
 to a file called `thermal-springs-1540545.json`. We first need to set some parameters before constructing the `GoogleAPISocket`:
@@ -61,3 +68,4 @@ new Sheets.Builder(socket.HTTP_TRANSPORT, socket.JSON_FACTORY, socket.getCredent
 ```
 
 to get a Sheets object.
+
